@@ -1,2 +1,3 @@
 class Game:
-    pass
+    def __init__(self, finished):
+        self.finished = finished
