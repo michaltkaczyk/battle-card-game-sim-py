@@ -2,6 +2,7 @@ import random
 import seaborn as sns
 import matplotlib.pyplot as plt
 from statistics import mean, median
+import progress
 
 N_SIMULATIONS = 100_000
 
@@ -85,6 +86,7 @@ if __name__ == '__main__':
     for i in range(N_SIMULATIONS):
         game = Game()
         game.play()
+        progress.print_progress_bar(iteration=i+1, total=N_SIMULATIONS)
         sim_rounds_elapsed.append(game.rounds_played)
 
     print("Mean number of rounds:", round(mean(sim_rounds_elapsed)))
